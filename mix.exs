@@ -34,17 +34,13 @@ defmodule SoccerSportsApi.MixProject do
     [
       {:tesla, "~> 1.6"},
       {:plug_cowboy, "~> 2.6"},
+      {:gettext, "~> 0.22.1"},
       {:jason, "~> 1.4"},
       {:phoenix, "~> 1.7.2"},
       {:phoenix_ecto, "~> 4.4"},
-      {:ecto_sql, "~> 3.6"},
       {:phoenix_live_dashboard, "~> 0.7.2"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
-      {:swoosh, "~> 1.3"},
-      {:finch, "~> 0.13"},
-      {:telemetry_metrics, "~> 0.6"},
-      {:telemetry_poller, "~> 1.0"},
-      {:gettext, "~> 0.20"}
+      {:finch, "~> 0.13"}
     ]
   end
 

@@ -38,8 +38,6 @@ defmodule SoccerSportsApiWeb do
       use Phoenix.Controller
 
       import Plug.Conn
-      import SoccerSportsApiWeb.Gettext
-
       unquote(verified_routes())
     end
   end
