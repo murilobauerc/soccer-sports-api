@@ -1,7 +1,7 @@
 defmodule SoccerSportsApi.Services.SoccerService do
   use Tesla
 
-  import Utils.Helper, only: [atomize_keys: 1]
+  require Logger
 
   plug(
     Tesla.Middleware.BaseUrl,
@@ -15,7 +15,15 @@ defmodule SoccerSportsApi.Services.SoccerService do
   def search() do
     case get("/apis/site/v2/sports/soccer/bra.1/scoreboard") do
       {:ok, %Tesla.Env{body: body}} ->
-        {:ok, atomize_keys(body)}
+        Logger.info("Searching on scoreboard...")
+
+        {:ok,
+         body
+         |> Map.get("events")
+         |> Enum.filter(fn event ->
+           String.contains?(event["shortName"], "SAN")
+         end)
+         |> IO.inspect()}
 
       _ ->
         {:error, "Internal Server Error"}
