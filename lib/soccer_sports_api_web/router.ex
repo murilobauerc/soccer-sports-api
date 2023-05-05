@@ -15,6 +15,6 @@ defmodule SoccerSportsApiWeb.Router do
   scope "/api/v1/", SoccerSportsApiWeb do
     pipe_through(:api)
 
-    get("/scoreboard", SoccerController, :index)
+    get("/scoreboard", SoccerController, :search)
   end
 end
