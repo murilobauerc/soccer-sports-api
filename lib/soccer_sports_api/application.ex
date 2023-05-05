@@ -8,12 +8,9 @@ defmodule SoccerSportsApi.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: SoccerSportsApi.Worker.start_link(arg)
-      # {SoccerSportsApi.Worker, arg}
+      {Plug.Cowboy, scheme: :http, plug: SoccerSportsApi.Router, options: [port: 8080]}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: SoccerSportsApi.Supervisor]
     Supervisor.start_link(children, opts)
   end

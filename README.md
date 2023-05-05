@@ -1,21 +1,14 @@
 # SoccerSportsApi
 
-**TODO: Add description**
+## Instructions to run the project locally
 
-## Installation
+### Prerequisites
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `soccer_sports_api` to your list of dependencies in `mix.exs`:
+- elixir 1.14.4
+- erlang 25.3.2
 
-```elixir
-def deps do
-  [
-    {:soccer_sports_api, "~> 0.1.0"}
-  ]
-end
+### Run
+
+```bash
+iex -S mix run
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/soccer_sports_api>.
-
