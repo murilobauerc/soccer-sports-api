@@ -13,4 +13,4 @@ config :soccer_sports_api, SoccerSportsApiWeb.Endpoint,
       # for details about using IPv6 vs IPv4 and loopback vs public addresses.
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
       port: String.to_integer(System.get_env("PORT") || "4000")
-    ],
+    ]
