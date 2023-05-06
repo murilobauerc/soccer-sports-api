@@ -55,12 +55,6 @@ defmodule SoccerSportsApi.Services.SoccerService do
     end)
   end
 
-  defp teamSuarezScoredAgainst(body, id) do
-  end
-
-  defp lastSuarezGoalTimestamp(body, id) do
-  end
-
   defp put_team_suarez_score_against([], map) do
     Map.put(map, :teamSuarezScoredAgainst, "nil")
   end
