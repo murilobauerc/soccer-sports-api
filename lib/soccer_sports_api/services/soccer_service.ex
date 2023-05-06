@@ -36,18 +36,15 @@ defmodule SoccerSportsApi.Services.SoccerService do
     |> Enum.map(fn event ->
       event["competitions"]
       |> Enum.map(fn competition ->
-        competition["competitors"]
-        |> Enum.map(fn competitor ->
-          competitor["leaders"]
-          |> Enum.map(fn leader ->
-            leader["leaders"]
-            |> Enum.map(fn inner_leader ->
-              inner_leader["athlete"]["id"]
+        competition["details"]
+        |> Enum.map(fn details ->
+            details["athletesInvolved"]
+          |> Enum.map(fn athletesInvolved ->
+            athletesInvolved["id"]
             end)
           end)
         end)
       end)
-    end)
     |> List.flatten()
     |> Enum.uniq()
     |> Enum.filter(fn id ->
