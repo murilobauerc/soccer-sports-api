@@ -6,7 +6,7 @@ defmodule SoccerSportsApiWeb.SoccerController do
   alias SoccerSportsApi.Services.SoccerService
 
   def search(conn, _params) do
-    Logger.info("SoccerSportsApiWeb.SoccerController.index/2")
+    Logger.info("SoccerSportsApiWeb.SoccerController.search/2")
 
     case SoccerService.search() do
       {:ok, data} ->
