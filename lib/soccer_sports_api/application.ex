@@ -13,7 +13,7 @@ defmodule SoccerSportsApi.Application do
       # Start Finch
       {Finch, name: SoccerSportsApi.Finch},
       # Start the Endpoint (http/https)
-      SoccerSportsApiWeb.Endpoint,
+      SoccerSportsApiWeb.Endpoint
       # Start a worker by calling: SoccerSportsApi.Worker.start_link(arg)
       # {SoccerSportsApi.Worker, arg}
       #{
