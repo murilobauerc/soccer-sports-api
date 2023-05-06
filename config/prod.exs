@@ -5,9 +5,13 @@ config :logger, level: :info
 
 
 config :soccer_sports_api, SoccerSportsApiWeb.Endpoint,
-  force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  http: [:inet6, port: System.get_env("PORT") || 4000],
   url: [host: System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 443],
-  secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
-  cache_static_manifest: "priv/static/cache_manifest.json",
-  server: true
+  http: [
+      # Enable IPv6 and bind on all interfaces.
+      # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
+      # See the documentation on https://hexdocs.pm/plug_cowboy/Plug.Cowboy.html
+      # for details about using IPv6 vs IPv4 and loopback vs public addresses.
+      ip: {0, 0, 0, 0, 0, 0, 0, 0},
+      port: String.to_integer(System.get_env("PORT") || "4000")
+    ],
+    secret_key_base: secret_key_base
