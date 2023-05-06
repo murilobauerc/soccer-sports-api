@@ -16,10 +16,12 @@ defmodule SoccerSportsApi.Application do
       SoccerSportsApiWeb.Endpoint,
       # Start a worker by calling: SoccerSportsApi.Worker.start_link(arg)
       # {SoccerSportsApi.Worker, arg}
-      {
-        Plug.Cowboy,
-        scheme: :http, plug: SoccerSportsApiWeb.Endpoint, port: 8080
-      }
+
+      # UNCOMMENT THIS BELOW TO RUN LOCALLY on localhost:8080/api/v1/scoreboard
+      #{
+      #  Plug.Cowboy,
+      #  scheme: :http, plug: SoccerSportsApiWeb.Endpoint, port: 8080
+      # }
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
